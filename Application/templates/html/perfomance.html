@@ -1,0 +1,362 @@
+{% extends 'front.html' %}
+{% block title %}Афиша{% endblock %}
+
+{% block content %}
+<div class="clear"></div>
+<div>
+    <div class="col x5">
+        <div class="inner-wrapper"></div>
+    </div>
+    <div class="col x5_3">
+        <div class="inner-wrapper">
+            <p class="title"><span class="big-title">{{ perfomance.title }}</span></p>
+        </div>
+    </div>
+    <div class="col x5">
+        <div class="inner-wrapper"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div>
+    <div class="col x5">
+        <div class="inner-wrapper" id="photo_list" style="height: 264px;">
+            <ul class="photo-slider" style="margin-top: 0px;">
+                <li class="active up-photo"><a href="/slir/w739/userfiles/perfomance/full/24feab1e272a0155.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/24feab1e272a0155.jpg" alt=""></a></li>
+                <li class="up-photo"><a href="/slir/w739/userfiles/perfomance/full/7ef3e19bb00d216b.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/7ef3e19bb00d216b.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/413d4e712305a9d2.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/413d4e712305a9d2.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/cd1e91c56fcf9bc3.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/cd1e91c56fcf9bc3.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/a8dca71e23949d61.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/a8dca71e23949d61.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/cae9e104ca19981f.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/cae9e104ca19981f.jpg" alt=""></a></li>
+                <li class="down-photo"><a href="/slir/w739/userfiles/perfomance/full/de3c1f9f04e5ee47.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/de3c1f9f04e5ee47.jpg" alt=""></a></li>
+                <li class="down-photo"><a href="/slir/w739/userfiles/perfomance/full/b1f1d7461116c601.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/b1f1d7461116c601.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/67197e125ddadb5a.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/67197e125ddadb5a.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/cd019931db314acb.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/cd019931db314acb.jpg" alt=""></a></li>
+                <li><a href="/slir/w739/userfiles/perfomance/full/6d1ddb7bbbf73f37.jpg">
+                    <img src="/slir/w112/userfiles/perfomance/full/6d1ddb7bbbf73f37.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col x5_4">
+        <div class="inner-wrapper" id="main_image">
+            <div style="float: left; position: absolute; color: #FFF; font-size: 48px; margin-left: 20px; cursor: pointer; opacity: 0.5;"
+                 onclick="prev_photo()">&lt;</div>
+            <div style="float: left; position: absolute; color: #FFF; font-size: 48px; right: 20px; cursor: pointer; opacity: 0.5;"
+                 onclick="next_photo()">&gt;</div>
+
+
+            <img src="{{ perfomance.link }}"
+                 class="mimage_main" alt="" id="mimage">
+
+            <img src="/img/loading.gif" alt="" id="mimage_load" style="display: none;">
+
+        </div>
+
+        <link href="//vjs.zencdn.net/4.10.2/video-js.css" rel="stylesheet">
+        <script src="//vjs.zencdn.net/4.10.2/video.js"></script>
+
+        <div style="border-top:1px solid #373737">
+            &nbsp;
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/js/jquery.simplemodal-1.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/simplemodal.css">
+    <script type="text/javascript" src="//wurfl.io/wurfl.js"></script>
+    <script type="text/javascript">
+
+        if ($.browser.opera || WURFL.is_mobile) {
+            // This gives better priority for webm in opera (with bad quality)
+            videojs.options.techOrder = ['html5', 'flash'];
+        } else {
+            // This gives better priority to flv (flash) instead of webm (with bad quality)
+            videojs.options.techOrder = ['flash', 'html5'];
+        }
+
+        function executeOnError(error_handler, code, timeout) {
+            var oldWindowOnError = window.onerror;
+            var executed = false;
+            window.onerror = function () {
+                if (!executed) {
+                    error_handler();
+                }
+                executed = true;
+
+                return true;
+            };
+
+            code();
+
+            setTimeout(function () {
+                if (!executed) {
+                    error_handler();
+                }
+
+                window.onerror = oldWindowOnError;
+            }, timeout);
+        }
+
+        $(function () {
+            $('a.promo-video-link').bind('click', function (evt) {
+                var video = $('#promo-video');
+
+                var h = $(window).height() - 100;
+                var playerHeight = h;
+
+                if (h < video.height()) {
+                    video.height(h);
+                    video.width(h * (16 / 9));
+                    playerHeight = h * (16 / 9);
+                }
+
+                var w = $(window).width() - 100;
+                var playerWidth = w;
+
+                if (w < video.width()) {
+                    video.width(w);
+                    video.height(w / (16 / 9));
+                    playerWidth = w / (16 / 9);
+                }
+
+
+                var h = video.height() + 36, w = video.width();
+                $('#promo-video-container').modal({
+                    containerCss: {
+                        overflowY: 'auto',
+                        height: h,
+                        width: w,
+                        marginTop: -(video.height() + 80) / 2,
+                        marginLeft: -(video.width() / 2)
+                    },
+                    onShow: function () {
+                        var coef = w / h
+                        if (coef < 16 / 9) {
+                            h = w / 16 * 9;
+                        } else {
+                            w = h / 9 * 16;
+                        }
+
+                        var player;
+                        executeOnError(function () {
+                            setTimeout(function () {
+                                player.play();
+                            }, 500);
+                        }, function () {
+                            player = videojs(video[0], {width: w, height: h, autoplay: false}, function () {
+                            });
+                        }, 1000);
+                    }
+                });
+
+                $('.close-window-link').click(function () {
+                });
+
+                return false;
+            });
+        });
+
+        // Hiding all errors, needed for videojs player to work better
+        window.onerror = function (e) {
+            return true;
+        };
+
+    </script>
+
+    <style type="text/css">
+        #promo-video {
+            overflow: hidden;
+        }
+
+        div.vjs-big-play-button {
+            visibility: hidden;
+        }
+
+        div.vjs-fullscreen-control {
+            visibility: hidden;
+            width: 20px;
+        }
+    </style>
+
+    <br>
+
+
+    <div id="promo-video-container" style="display:none;position:relative;">
+        <div style="text-align:center;clear:both;">
+            <a class="close-window-link orange-text modalClose" style="font-weight:bold;" href="javascript:;">Закрыть
+                окно</a>
+            <br>
+            <br>
+        </div>
+        <video id="promo-video" class="vjs-default-skin" controls="" preload="none" width="1280" height="720">
+            <source src="/video/photofinish.flv" type="video/x-flv">
+            <source src="/video/photofinish.webm" type="video/webm">
+            <!--<source src="/video/photofinish.mp4" type='video/mp4' />-->
+            <p class="vjs-no-js">
+                Для просмотра этого видео пожалуйста включите JavaScript, а также используйте браузер который <a
+                    href="http://videojs.com/html5-video-support/" target="_blank">поддерживает HTML5 видео</a>
+            </p>
+        </video>
+    </div>
+
+
+</div>
+<div class="clear"></div>
+</div>
+<div>
+    <div class="col x5">
+        <div class="inner-wrapper"><input type="hidden" value="1">
+
+            <p class="pc-title">Ближайшие спектакли</p>
+
+
+            <p class="pc-title">Режиссёр-постановщик - заслуженный деятель искусств России Сергей Голомазов</p>
+
+            <p>
+                Художник - лауреат Государственной премии России, народный художник России Станислав Бенедиктов</p>
+
+            <p>
+                Пластика - Наталья Гаранина, Сергей Власенко</p>
+
+            <p>
+                Музыкальное оформление - Сергей Голомазов, Илья Муравьев, Дмитрий Снаговский</p>
+
+            <p>
+                Помощник режиссера - Татьяна Фокина</p>
+
+            <p class="pc-title">Действующие лица и&nbsp;исполнители</p>
+            <hr class="content">
+            <p>
+                Сэм, популярный писатель, 80 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/82/">Владимир Андреев</a>
+
+            </p>
+
+            <p>
+                Сэм, 60 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/3/">Алексей Шейнин</a>
+
+            </p>
+
+            <p>
+                Сэм, 40 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/37/">Борис Миронов</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/6/">Владимир Зайцев</a>
+
+            </p>
+
+            <p>
+                Сэм, 20 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/39/">Павел Галич</a>
+
+            </p>
+
+            <p>
+                Томми, около 40 лет, их сын -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/29/">Олег Филипчик</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/52/">Сергей Покровский</a>
+
+            </p>
+
+            <p>
+                М-р Реджинальд, их отец -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/59/">Герман Энтин</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/50/">Владимир Павлов</a>
+
+            </p>
+
+            <p>
+                Миссис Кингсейл, их мать -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/24/">Ольга Селезнёва</a>
+
+            </p>
+
+            <p>
+                Стелла, 20 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/48/">Анна Скварник</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/14/">Елена Пурис</a>
+
+            </p>
+
+            <p>
+                Стелла, 40 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/54/">Василиса Пьявко</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/40/">Татьяна Рудина</a>
+
+            </p>
+
+            <p>
+                Стелла, 80 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/49/">Александра Назарова</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/28/">Светлана Головина</a>
+
+            </p>
+
+            <p>
+                Клариса, около 20 лет; Эйда, около 30 лет -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/58/">Людмила Шмелёва</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/45/">Елена Калинина</a>
+
+            </p>
+
+            <p>
+                Элис, около 20 лет, невеста Томми -<br>
+
+                <a class="role_actor" href="/theatre/troupe/view/48/">Анна Скварник</a>
+
+                <a class="role_actor" href="/theatre/troupe/view/14/">Елена Пурис</a>
+
+            </p>
+
+        </div>
+    </div>
+    <div class="col x5_3">
+        <div class="inner-wrapper">
+            <p class="pc-title">{{ perfomance.author.title }}</p>
+            <hr class="content">
+
+            {{ perfomance.lead | raw }}
+
+            <div class="inner-wrapper">
+                <p class="s-italic"><a href="/theatre/actors/" class="main-part-link">люди спектакля</a></p>
+                <hr class="content">
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col x5">
+        <div class="inner-wrapper">
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+{% endblock %}

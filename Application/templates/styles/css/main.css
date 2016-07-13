@@ -1,0 +1,111 @@
+/***** КОНТЕНТ САЙТА *****/
+#main_header{}
+#main_header img.g-logo{}
+#main_header .quote{}
+
+.content .wrapper{padding-top: 10px;}
+.content a.main-part-link{color: #54626B; font-family: 'schoolbookcbold';}
+
+/***** АФИША ******/
+.billboard{padding: 0px 15px;}
+.navigation{background: #FAAE4E; text-align: center;}
+.navigation a{display: block; color:#ffffff;text-transform: uppercase; font-weight: bold;}
+.billboard p{color: white;font-family: 'schoolbookcbold';}
+.billboard .one-block{padding: 10px 0;}
+.billboard .bb-info-content{margin: 10px 0;}
+.billboard .bb-date{margin: 0px 0px 10px 0px;font-family: 'schoolbookcbold';font-size: 20px;}
+.billboard .bb-day{font-family: 'aga_ermolovaregular';color: white;font-size: 37px;line-height: 30px;font-style: normal;}
+.billboard .bb-status {color: #FAAE4E;}
+
+/****** ПАРТНЕРЫ ******/
+.partners-block{padding: 0px 0px; text-align: center;background: #fff;}
+.one-partner{min-width: 120px;min-height: 80px;display: inline-block;margin: 0px;text-align:center;}
+.one-partner img {height:72px;}
+.one-partner a {display:block;padding:10px 0;}
+.one-partner.hb a {border-right:1px solid #d2d2d5;border-left:1px solid #d2d2d5;}
+
+/** НОВОСТИ **/
+#main_news {margin-bottom:20px;padding-top:0;padding-bottom:0;}
+#main_news .wrapper {padding:20px !important;}
+#main_news .one-block {margin-bottom:1em;position: relative;}
+#main_news .preview {margin-bottom:.5em;}
+.rbrdr {
+    width:80px;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
+    height:1.5em;
+    position: absolute;
+    right:20px;
+    margin-top:-2em;
+}
+.bb-date strong {border-bottom:1px solid #FAAE4E;padding-bottom:.5em;line-height:2em;}
+
+
+#news_slider {height: 290px;overflow-y:hidden;}
+#main_menu.fixed {
+    width: 1000px;
+    position: fixed;
+    top: 0;
+    background-color: #525D65;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.breadcrumbs {
+    display: table;
+    z-index: 1;
+    width: 1004px;
+    margin-left: -22px;
+    margin-top: -20px;
+    padding: 0px;
+    border-bottom: none;
+    text-align: center;
+    text-transform: uppercase;
+    background: #FAAE4E;
+}
+
+.breadcrumbs a {
+    display: table-cell;
+    padding: 5px 15px;
+    font-size: 15px;
+    color: #54626b;
+    font-weight: bold;
+    border-right: 2px solid #54626b;
+    border-left: 2px solid #54626b;
+}
+
+.breadcrumbs a.active {
+    background-color: #ffffff;
+}
+
+.breadcrumbs.fixed {
+    position: fixed;
+    top: 58px;
+    background: #FAAE4E;
+}
+
+.breadcrumbs a:hover {
+    color: white;
+}
+
+.breadcrumbs a.active:hover {
+    color: #54626b;
+}
+
+.repertoire-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p.red-text, span.red-text {
+    color: red;
+    text-align: center;
+    margin-bottom: 5px;
+}

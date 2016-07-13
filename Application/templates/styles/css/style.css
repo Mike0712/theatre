@@ -1,0 +1,188 @@
+/******* СТИЛИ ВНУТРЕННИХ СТРАНИЦ *******/
+@import url(base.css);
+
+/***** ОБЩИЕ СТИЛИ *******/
+
+
+/***** ОСНОВНОЙ КОНТЕНТ *****/
+.all{min-height:100%;}
+#general{padding-right: 0px; padding-bottom: 140px; padding-left: 0px; position: relative; margin: 0 auto; height: auto !important; height: 100%; width:1040px;}
+.border-r{-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; behavior: url(border-radius.htc);}
+#toTop {position: fixed;z-index: 9999;bottom: 20px;right: 20px;background: url('../img/scrolltop.png') no-repeat;width: 57px;height: 56px;border: none;padding: 5px;cursor: pointer;color: transparent;text-decoration: none;}
+
+/***** ШАПКА САЙТА ******/
+#header {position: relative;margin-top: 10px;}
+#header .wrapper {padding:11px 20px 11px;}
+/*#logo img {width: 100%;}*/
+#header-open-season {min-height: 1px;}
+div#header-open-season p.title { color: #dde0e1;position: absolute;bottom: 20%;}
+#header-contacts{margin-top: 10px;}
+
+#main_menu {height: 18px;margin: 10px 0px 10px 0px;position: relative;z-index: 1000;padding-bottom: 10px;}
+#main_menu_block #menu_list {position: relative;}
+#main_menu_block #menu_list a {text-decoration: none;color: #53616a;text-transform: uppercase; text-align: left;padding-left: 10px;display: block;background: white; font-weight: bold;font-size: 11px;}
+#main_menu_block #menu_list a:hover, #main_menu_block #menu_list a.a {background: #faae4e;}
+
+/***** ОБЩИЙ КОНТЕНТ *******/
+.big-title{font-size: 81px;line-height: 81px;color: #FAAE4E;font-family: 'aga_ermolovaregular';text-transform: uppercase;display:block;}
+.middle-title{font-size: 50px;line-height: 54px;color: #FAAE4E;font-family: 'aga_ermolovaregular';text-transform: uppercase; margin-bottom: 20px;}
+
+.content{background: white;padding: 10px 0px 10px 20px;}
+.content a{color: #54626b;}
+.content p{margin-bottom: 10px;}
+.content .col-block{margin: 10px 0 40px 0;}
+.content .col-block img{width: 100%;}
+.content .tag a{font-size: 14px; color: #FAAE4E; font-weight: bold;font-family: 'schoolbookcbold';}
+.content-title{margin: 20px 0px;}
+.content table{}
+.content table tr{vertical-align: top;}
+.content ul, .content ol{margin-bottom: 10px;margin-left: 30px;list-style: circle;}
+
+/**** СЛАЙДЕР ФОТО *****/
+.content ul.photo-slider {list-style: none;margin-left: 0; padding-left: 0;display: inline-block;width: 100%;margin-bottom: 0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-padding-start: 0px;
+}
+.content ul.photo-slider .image-border {display: none;position: absolute;z-index: 10;width: 90px;height: 71px;border: 5px solid #EAC45F;top: 0px;left: 0px;}
+.content ul.photo-slider .image-border .inset-border{border: 5px solid #EAC45F;}
+.content ul.photo-slider li {display: inline-block;width: 47%;position: relative;margin-left: 4px;text-align: left;}
+.content ul.photo-slider li img {width: 100%;}
+.content ul.photo-slider li a {}
+.content ul.photo-slider li.active img {outline: 5px solid #EAC45F;outline-offset: -5px;}
+#photo_list{overflow: hidden;}
+
+
+.d-social{position: relative; margin: 5px 0 5px 0;}
+.ds-one-block{float: left; margin-right: 20px;}
+
+p.autor_press{font: italic 14px Arial;}
+
+.popup-block {position: fixed;top: 10%;left: 50%;width: 570px !important;margin-left: -285px;display: none;background: white;border: #868686 1px solid;padding: 10px 20px 10px 20px;z-index: 2000;
+    -moz-box-shadow: 0 7px 10px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+}
+.close-form {position: absolute;top: 0px;right: 0px;height: 20px;width: 20px;}
+.popup-block form p, .popup-block form span {color: #9f9f9f; font-size: 14px;}
+.popup-block form p {margin-bottom: 10px;}
+.popup-block form .col_wrap {margin-right: 5%;}
+.popup-block form .col_wrap_r{margin-left: 5%;}
+
+.preview-image{width: 100%;}
+/***** АФИША ******/
+.billboard-content{margin: 20px 0;}
+.billboard-content .date-paginator {margin-left: 20px;text-transform: uppercase;}
+.billboard-content .date-paginator a{font-size: 18px;color: #FAAE4E;font-weight: bold;margin: 0px 15px;}
+.billboard-content .date-paginator .arrow{font-size: 28px;}
+.billboard-content .bc-block{margin: 20px 0;padding: 10px 0px 00px 0px;}
+.billboard-content .bc-block:hover{background: #f1f1f1;}
+.billboard-content .bc-block.pages:hover{background: transparent;cursor: default;}
+.pages strong {background:#FAAE4E;padding:2px 3px;}
+.pages a {color:#FAAE4E;padding:2px 3px;}
+.pages a:hover {color:#000;background:#FAAE4E;}
+.billboard-content .bc-block:hover .hide{display: inline;}
+.billboard-content .bc-block .order-tickets{margin-left: 20px;}
+#afisha_slider {overflow: hidden;}
+
+/***** БЛОГ *****/
+.blog-content{margin: 20px 0;}
+.blog-content .b-block{margin: 20px 0;padding: 10px 0px 20px 0px;}
+.blog-content .b-block h2{margin-top: 0px;}
+.blog-content .b-date{margin: 10px 0 5px 0; font-weight: bold;}
+.blog-content .b-text p{margin: 5px 0 15px 0;}
+
+/**** ЛЮДИ ТЕАТРА ******/
+.people-content{margin: 20px 0;}
+.people-content .pc-block{margin: 20px 0;padding: 10px 0px 20px 0px;}
+.people-content .pc-block img{width: 100%;}
+.pc-title {font-style:italic;font-weight:bold;font-family:Georgia;color:#55626a;margin:20px 0 10px;}
+.pc-position {color:#000;text-transform: uppercase;}
+.pc-position span {color:#FAAE4E;}
+#main_image {overflow:hidden;line-height:336px;height:492px;text-align: center;position: relative;padding-right:0;margin-right:20px;}
+/*
+#main_image img#mimage {vertical-align:middle;height: 336px;left:50%;position: absolute;margin-left:-429px;}
+#main_image img.mimage_main {height: 418px !important;}
+*/
+#main_image img#mimage_load {display: none; position: absolute; left: 50%; top: 50%; margin-left: -16px; margin-top: -16px;}
+.people_matrix{float:left;width: 20%;min-height:160px;margin-bottom:60px;height: 162px;}
+.people_surname{font-weight: bold;text-align: left; text-transform: uppercase;}
+
+
+/***** ПОДВАЛ САЙТА ******/
+#footer {position: absolute;bottom: 0;width: 100%;color: #B7B7B7;font-family: Arial;height: 90px;padding-bottom: 20px;}
+#footer .wrapper {background: #FAAE4E;position: relative;z-index: 10;padding: 5px 20px 5px 20px;max-width: 928px;margin: 0 auto;height: 70px;min-width: 960px;}
+#footer .inner-wrapper {padding: 0px 20px;}
+#footer a {color:#b7b7b7;text-decoration: underline;}
+#footer p {color:#1e1e1e; margin: 0; font-size: 12px;}
+#weblime {padding-left:65px;}
+#weblime a {position: relative;display:block;}
+#weblime a.web-name {position: relative;display: inline-block;text-decoration: none;}
+#weblime a img {position: absolute;left:-68px;top:-37px;}
+#footer a#link_to_top {color:#787878;position: absolute;left:50%;width:126px;margin-left:-63px;font-size:14px;font-family:Arial;color:#666;border-bottom:1px dashed;bottom:100%;margin-bottom:12px;line-height: 14px;text-decoration: none !important;}
+#footer a#link_to_top img {position: absolute;left:50%;margin-left:-5px;top:100%;margin-top:8px;}
+#leafs {position:absolute;bottom:0;left:50%;margin-left:-592px;z-index:0;}
+#footer .phones {min-width: 260px; width: 300px;padding-top: 7px;}
+#footer .copyright {min-width: 150px;width: 150px;padding-top: 7px;}
+#footer .work-time {padding-top: 7px;}
+#footer .socials{float: left;width: 170px;padding: 12px 3% 0 0;}
+#footer .socials p {margin-bottom:7px;}
+#footer .socials a {text-decoration: none !important; margin-left: 10px;position: relative;display: inline-block;}
+#footer .socials a img {vertical-align:bottom; height: 20px;}
+#footer .socials a img.ci {position: absolute;top: 0;left: 0;z-index: 5;display: none;}
+#footer .designer-logo{float: right; width: 90px;}
+
+/***** ПРОСМОТР СПЕКТАКЛЯ *****/
+a.block-link {display:block;margin:8px 0;}
+a.role_actor {display:block;}
+
+.splashscreen_body {overflow: hidden;}
+#fullscreen {width:100%;position: absolute;}
+#enter_form {background: url(../img/enter_logo.png) no-repeat center top;width:364px;height:160px;position: absolute;left:50%;margin-left: -182px;top:50%;margin-top:-80px;}
+#enter_form a {display: block;width:100%;height:100%;}
+
+.for_invalids {position:relative;padding-right:20px;display:block;}
+.for_invalids img.invalid_ico {position:absolute;left:0;}
+
+#promo_slider {height:342px;}
+.perfomance_slider_description {position: relative;color:#fff !important;}
+.perfomance_title {font-size:50px;font-family: 'aga_ermolovaregular';padding:0;color:#fff;text-transform:uppercase;line-height:50px;}
+.perfomance_info {font-size:20px;font-style:italic;color:#fff;font-family: 'schoolbookcbold';}
+.perfomance_premiere {text-transform:uppercase;font-size:19px;font-style:italic;color:#faae4e;text-align:right;padding-top:10px !important; font-family: 'schoolbookcbold';}
+.perfomance_date {position: absolute;bottom:0;font-size:39px;font-family: 'aga_ermolovaregular';color:#fff;text-transform:uppercase;}
+.perfomance_dates {}
+.perfomance_dates p.pd_title {text-align:right;font-family: 'schoolbookcbold';font-size: 14px;font-style: italic;color:#fff;}
+.perfomance_dates p span.month {display:inline-block;width:90px;font-family: 'aga_ermolovaregular';text-transform: uppercase;font-size:22px;margin-left:15px;}
+.perfomance_dates p span.dates {color:#fff;}
+
+.block_link {background:#FAAE4E;padding:8px;color:#fff;text-transform:uppercase;text-decoration:none;display:block;margin-bottom:1em;font-size:13px;}
+.block_link span {color: #000 !important;text-decoration:underline;}
+#order_tickets_form {display:none;}
+
+#menu_list .x6 {width:16.7%;}
+#menu_list .x6:last-child {width:16.5%;}
+#menu_list .x6:last-child .inner-wrapper {padding-right:0;}
+
+#menu_list .x5 {width:20%;}
+#menu_list .x5:last-child {width:20%;}
+#menu_list .x5:last-child .inner-wrapper {padding-right:0;}
+
+.play_btn {position: absolute;left: 50%;top: 50%;width:38px;height:39px;margin-top:-19px;margin-left:-19px;background:url(../img/play-video.png) no-repeat center;}
+.nivo-directionNav {display:none;}
+
+#nivo_age_limit {position: absolute;right:0;top:15px;color:#fff;font-size:22px;background:url('../img/bg-slider-plate.png');padding:10px;z-index: 50;}
+
+.calendar-cell {
+    height:20px;
+    width:28px;
+    text-align:center;
+    border:1px solid #FAAE4E;
+}
+
+.calendar-cell:hover {
+    background: #FAAE4E;
+}
+
+.calendar-cell:hover a {
+    color: black;
+}
