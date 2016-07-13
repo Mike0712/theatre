@@ -91,7 +91,7 @@ class __TwigTemplate_c9a7e006791c4baa83014ccfd07457d2027f8405091556ae712ce397167
                 <td style=\"width: 65%; text-align: left;\">
                     <a style=\"font-size:28px;font-weight:bold;\"
 
-                       href=\"/controllers/perfomance/perfomance/?id=";
+                       href=\"/controllers/pf/perfomance/?id=";
             // line 45
             echo twig_escape_filter($this->env, $this->getAttribute($context["dev"], "id", array()), "html", null, true);
             echo "\">";
@@ -191,7 +191,7 @@ class __TwigTemplate_c9a7e006791c4baa83014ccfd07457d2027f8405091556ae712ce397167
 /*                 <td style="width: 65%; text-align: left;">*/
 /*                     <a style="font-size:28px;font-weight:bold;"*/
 /* */
-/*                        href="/controllers/perfomance/perfomance/?id={{ dev.id }}">{{ dev.title }}</a>*/
+/*                        href="/controllers/pf/perfomance/?id={{ dev.id }}">{{ dev.title }}</a>*/
 /* */
 /* */
 /*                     <div style="margin-top: 10px;">*/

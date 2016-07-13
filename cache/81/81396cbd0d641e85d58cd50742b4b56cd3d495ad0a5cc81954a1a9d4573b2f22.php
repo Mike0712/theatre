@@ -105,7 +105,7 @@ class __TwigTemplate_42016d9dec4c2d6e3fe18ea69c35b8b66574647f323246ae6532d7c1943
                     <div id=\"menu_list\">
                         <div class=\"col x5\">
                             <div class=\"inner-wrapper\">
-                                <a href=\"/perfomance/\">Афиша</a>
+                                <a href=\"/pf/\">Афиша</a>
                             </div>
                         </div>
                         <div class=\"col x5\">
@@ -304,7 +304,7 @@ class __TwigTemplate_42016d9dec4c2d6e3fe18ea69c35b8b66574647f323246ae6532d7c1943
 /*                     <div id="menu_list">*/
 /*                         <div class="col x5">*/
 /*                             <div class="inner-wrapper">*/
-/*                                 <a href="/perfomance/">Афиша</a>*/
+/*                                 <a href="/pf/">Афиша</a>*/
 /*                             </div>*/
 /*                         </div>*/
 /*                         <div class="col x5">*/
