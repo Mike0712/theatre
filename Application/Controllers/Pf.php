@@ -7,7 +7,7 @@ use App\Controller;
 use App\Exceptions\Error404;
 use App\Models\Perfomance;
 
-class Perfomance extends Controller
+class Pf extends Controller
 {
     protected static $actionDefault = 'All'; // Создаём свойство экшн по умолчанию для данного контроллера
 

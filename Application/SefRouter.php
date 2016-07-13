@@ -14,19 +14,19 @@ class SefRouter
         $parts = array_diff(explode('/', $url), ['']); // Удаляем пустые элементы
         switch (count($parts)) {
             case 0:
-                $ctrl = '\App\Controllers\Perfomance';
+                $ctrl = '\App\Controllers\Pf';
                 break;
             case 1: // Для GET параметров
                 if (is_readable(__DIR__ . '/../' . $parts[1]) || isset($_GET['ctrl']) || isset($_GET['page'])) {
-                    $controller = ucfirst($_GET['ctrl']) ?: 'Perfomance';
+                    $controller = ucfirst($_GET['ctrl']) ?: 'Pf';
                     $action = ucfirst($_GET['act']);
                 } else {
-                    $controller = ucfirst($parts[1]) ?: 'Perfomance';
+                    $controller = ucfirst($parts[1]) ?: 'Pf';
                 }
                 $ctrl = '\App\Controllers\\' . $controller;
                 break;
             case 2: // Для обычных адресов типа /ctrl/act/
-                $controller = ucfirst($parts[1]) ?: 'Perfomance';
+                $controller = ucfirst($parts[1]) ?: 'Pf';
                 $action = ucfirst($parts[2]);
                 $ctrl = '\App\Controllers\\' . $controller;
                 break;
